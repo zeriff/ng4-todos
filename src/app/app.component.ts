@@ -7,7 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  onTodoCreated(value: string){
-    console.log("EMITD", value);
+  todoList: {title: string, done: boolean}[] = [];
+
+  onTodoCreated(value: string) {
+    this.todoList.push({
+      title: value,
+      done: false
+    });
   }
 }

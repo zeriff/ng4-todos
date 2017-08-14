@@ -1,7 +1,19 @@
+
+
 <div class="container">
+  <div class="row">
+    <h1>ANGULAR TODO</h1>
+  </div>
   <div class="row">
     <div class="col-sm-6">
       <app-todo-form (todocreated)="onTodoCreated($event)"></app-todo-form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>ToDo List</h3>
+      <hr>
+      <app-todo-list [todoList]="todoList"></app-todo-list>
     </div>
   </div>
 </div>

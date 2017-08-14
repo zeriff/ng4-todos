@@ -1,0 +1,10 @@
+.container {
+    margin-top: 30px;
+}
+.row {
+    display: flex; 
+    justify-content: space-between;
+}
+h1 {
+    color: red;
+}

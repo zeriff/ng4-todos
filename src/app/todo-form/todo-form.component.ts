@@ -16,7 +16,9 @@ export class TodoFormComponent implements OnInit {
   onAddButtonClick(){
    let value = this.todo.nativeElement.value;
     if(value){
-      this.todocreated.emit(value)
+      this.todocreated.emit(value);
     }
+    this.todo.nativeElement.value = "";
+    this.todo.nativeElement.focus();
   }
 }

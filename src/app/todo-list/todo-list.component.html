@@ -1,0 +1,9 @@
+<div *ngFor="let item of todoList; let i = index" class="row" [ngStyle] = "getRowStyle(item)">
+  <div class="col-sm-8">
+    {{item.title}}
+  </div>
+  <div class="col-sm-4">
+    <button class="btn btn-success btn-xs" (click)="onToggle(item)">{{item.done ? "Undone": "Done"}}</button>
+    <button class="btn btn-danger btn-xs" (click)="onDelete(i)">Delete</button>
+  </div>
+</div>
