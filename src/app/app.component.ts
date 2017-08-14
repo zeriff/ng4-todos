@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  onTodoCreated(value: string){
+    console.log("EMITD", value);
+  }
 }
