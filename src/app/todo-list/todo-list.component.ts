@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -6,9 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  @Input() todoList: {title: string, done: boolean}[]= [];
+  todoList: {title: string, done: boolean}[]= [];
 
-  constructor() { }
+  constructor(private todoService: TodoService) { 
+    this.todoList = todoService.todoList;
+  }
 
   ngOnInit() {
   }
@@ -16,7 +19,7 @@ export class TodoListComponent implements OnInit {
     item.done = !item.done;
   } 
   onDelete(index: number){
-   this.todoList.splice(index, 1);
+    this.todoService.deleteTodo(index);
   }
   getRowStyle(item: {title: string, done: boolean}) {
     return {
